@@ -1,0 +1,557 @@
+/*
+ * Global styles and custom variables
+ *
+ * This stylesheet provides a clean, modern look inspired by the Lovable demo. It uses
+ * CSS custom properties (variables) to make it easy to adjust colours and reuse values
+ * throughout the document. Sections are spaced generously for a relaxed feel, with
+ * responsive layouts that collapse gracefully on smaller screens.
+ */
+
+:root {
+  /* Colour palette */
+  --primary-color: #215732; /* deep green */
+  --primary-dark: #174422;
+  --secondary-color: #faece3; /* light peach background */
+  --accent-color: #fbf3e7;    /* off‑white boxes */
+  --text-color: #2b2b2b;     /* dark neutral text */
+  --muted-text: #666666;     /* muted grey for descriptions */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+/* Navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.nav-links .cta {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.nav-links .cta:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5rem 1rem 4rem;
+  background: radial-gradient(circle at 20% 20%, #f9e8dc 0%, #f2dfce 100%);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.hero h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 1rem 0 2rem;
+  font-size: 1.1rem;
+  color: var(--muted-text);
+}
+
+.hero .buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero .buttons a {
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border: 2px solid var(--primary-color);
+}
+
+.hero .buttons a:first-child {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.hero .buttons a:first-child:hover {
+  background-color: var(--primary-dark);
+}
+
+.hero .buttons a.secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.hero .buttons a.secondary:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Features section */
+.features {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.features h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.features .description {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--muted-text);
+  font-size: 1rem;
+}
+
+.features .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--accent-color);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card i {
+  /* Old icon styles kept for reference. We embed icons via <img> now. */
+}
+
+/* Icon images inside cards */
+.card .icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: invert(31%) sepia(22%) saturate(525%) hue-rotate(88deg) brightness(95%) contrast(89%);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.card p {
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+/* Menu section */
+.menu-section {
+  background-color: var(--secondary-color);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.menu-section h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.menu-section p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--muted-text);
+  font-size: 1rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.menu-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.menu-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+}
+
+.menu-item:last-child {
+  margin-bottom: 0;
+}
+
+.menu-item h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text-color);
+}
+
+.menu-item span.price {
+  font-weight: 600;
+  color: var(--primary-color);
+  white-space: nowrap;
+}
+
+.menu-item p.description {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted-text);
+  margin-top: 0.2rem;
+}
+
+.menu-section .note {
+  margin-top: 2rem;
+  font-style: italic;
+  color: var(--muted-text);
+  font-size: 0.9rem;
+}
+
+/* Events section */
+.events-section {
+  background-color: #ffffff;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.events-section h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.events-section p {
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  color: var(--muted-text);
+  font-size: 1rem;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.event-card {
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.event-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.event-card p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--muted-text);
+}
+
+.event-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.event-card ul li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+.event-card ul li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Call to action */
+.cta-section {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.cta-section p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  color: #e9f1e6;
+}
+
+.cta-section a {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: var(--primary-color);
+  padding: 0.8rem 1.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cta-section a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Contact section */
+.contact-section {
+  background-color: var(--secondary-color);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.contact-section p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--muted-text);
+  font-size: 1rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  text-align: left;
+}
+
+.contact-info, .book-event {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h3, .book-event h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.contact-info ul, .book-event ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+.contact-info li i {
+  /* Removed default icon styling for <i> tags; we now use <img> icons */
+}
+
+/* Icon images in contact info */
+.contact-info .contact-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-right: 0.6rem;
+  margin-top: 0.1rem;
+  filter: invert(31%) sepia(22%) saturate(525%) hue-rotate(88deg) brightness(95%) contrast(89%);
+}
+
+.contact-info li span {
+  display: block;
+}
+
+.book-event p {
+  margin-bottom: 0.5rem;
+  color: var(--muted-text);
+}
+
+.book-event ul li {
+  padding-left: 1.2rem;
+  position: relative;
+  margin-bottom: 0.4rem;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+.book-event ul li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.book-event .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.book-event .btn {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  margin-right: 0.6rem;
+}
+
+.book-event .btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.book-event .btn.secondary {
+  background-color: #ffffff;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.book-event .btn.secondary:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.contact-section .social {
+  margin-top: 2rem;
+  color: var(--muted-text);
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #ffffff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted-text);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero h2 {
+    font-size: 1rem;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .menu-item span.price {
+    margin-top: 0.2rem;
+  }
+}
