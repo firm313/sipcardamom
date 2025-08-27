@@ -561,6 +561,7 @@ body {
 }
 
 /* Responsive adjustments */
+/* Tablet*/
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 2.2rem;
@@ -583,5 +584,15 @@ body {
   }
   .menu-item span.price {
     margin-top: 0.2rem;
+  }
+}
+/* Mobile*/
+@media (max-width: 500px) {
+  .nav-links {
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .nav-links a {
+    padding: 0.5rem 0.4rem;
   }
 }
