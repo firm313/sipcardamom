@@ -595,4 +595,10 @@ body {
   .nav-links a {
     padding: 0.5rem 0.4rem;
   }
+    .menu-item {
+    align-items: flex-start;
+  }
+  .menu-item .menu-content {
+    text-align: left;
+}
 }
