@@ -559,3 +559,42 @@ body {
     margin-top: 0.2rem;
   }
 }
+/* EMERGENCY NAVIGATION FIX - ADD THIS AT THE BOTTOM */
+.navbar {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 2rem !important;
+  flex-wrap: wrap !important;
+}
+
+.logo {
+  order: 1 !important;
+}
+
+.nav-links {
+  order: 2 !important;
+  display: flex !important;
+  gap: 1.5rem !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  
+  .logo {
+    order: 1 !important;
+  }
+  
+  .nav-links {
+    order: 2 !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+}
