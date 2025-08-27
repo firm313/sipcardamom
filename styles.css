@@ -561,6 +561,7 @@ body {
 }
 
 /* Responsive adjustments */
+/* Tablet*/
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 2.2rem;
@@ -578,10 +579,28 @@ body {
     margin-top: 0.5rem;
   }
   .menu-item {
-    flex-direction: column;
     align-items: flex-start;
   }
   .menu-item span.price {
     margin-top: 0.2rem;
   }
+   .menu-item .menu-content {
+    text-align: left;
+}
+}
+/* Mobile*/
+@media (max-width: 500px) {
+  .nav-links {
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .nav-links a {
+    padding: 0.5rem 0.4rem;
+  }
+    .menu-item {
+    align-items: flex-start;
+  }
+  .menu-item .menu-content {
+    text-align: left;
+}
 }
