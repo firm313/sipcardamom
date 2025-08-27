@@ -53,10 +53,11 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem; /* Increased from 1rem for better spacing */
   margin: 0;
   padding: 0;
   align-items: center;
+  justify-content: center;  /* Add this line for perfect centering */
 }
 
 .nav-links a {
